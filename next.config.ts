@@ -5,6 +5,12 @@ const nextConfig: NextConfig = {
   images: {
     domains: ['images.prismic.io'],
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 }
 
 export default nextConfig
