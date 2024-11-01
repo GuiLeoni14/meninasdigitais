@@ -34,7 +34,7 @@ export default function Home() {
                 <Link href="/" tabIndex={-1}>
                   <div className="relative h-40 w-40 overflow-hidden rounded-full bg-slate-300">
                     <img
-                      src="https://scontent-gru2-2.cdninstagram.com/v/t51.2885-19/72777563_1120580484806658_1138345150108401664_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-gru2-2.cdninstagram.com&_nc_cat=106&_nc_ohc=5efh85YlCEUQ7kNvgGTElT8&_nc_gid=e915de6e257b43ad85a4d1da21eaf6d0&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AYBQcCQ0ibAiH7hxDSCGzybFbwJp0C0J94qa8ByHbXTtFw&oe=672AE39C&_nc_sid=7a9f4b"
+                      src="/logo.png"
                       alt="A photo of Margaret Smith (fictional)."
                       className="object-cover"
                     />
