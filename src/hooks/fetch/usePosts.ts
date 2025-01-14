@@ -2,8 +2,9 @@
 import { useQuery } from '@tanstack/react-query'
 import { RichText } from 'prismic-dom'
 import { getPrismicClient } from '../../lib/prismicClient'
+import { BuildQueryURLArgs } from '@prismicio/client'
 
-type Post = {
+export type Post = {
   id: string
   title: string
   description: string
@@ -11,7 +12,9 @@ type Post = {
   date: string
 }
 
-export const getPosts = async (params?: any): Promise<Post[]> => {
+export const getPosts = async (
+  params?: Partial<BuildQueryURLArgs>,
+): Promise<Post[]> => {
   const prismicClient = getPrismicClient()
   const response = await prismicClient.getAllByType('post', {
     orderings: 'my.post.date desc',
@@ -39,7 +42,7 @@ export const getPosts = async (params?: any): Promise<Post[]> => {
 
 interface UsePostsProps {
   identifier?: string | string[]
-  params?: any
+  params?: Partial<BuildQueryURLArgs>
   options?: any
 }
 
