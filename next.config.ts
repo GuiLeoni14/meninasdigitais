@@ -7,6 +7,8 @@ const nextConfig: NextConfig = {
       'images.prismic.io',
       'aceternity.com',
       'portal.mch.ifsuldeminas.edu.br',
+      'images.unsplash.com',
+      'assets.aceternity.com',
     ],
   },
   typescript: {

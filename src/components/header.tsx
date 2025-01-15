@@ -1,47 +1,58 @@
-import Link from 'next/link'
+'use client'
+import React, { useState } from 'react'
+import { HoveredLink, Menu, MenuItem, ProductItem } from './ui/navbar-menu'
+import { cn } from '@/lib/utils'
 
 export function Header() {
+  const [active, setActive] = useState<string | null>(null)
   return (
-    <header className="px-4 py-8 md:px-6 md:py-10 lg:py-12">
-      <div className="mx-auto w-full max-w-3xl">
-        <div className="grid grid-cols-1 justify-items-center gap-20">
-          <nav>
-            <ul className="flex flex-wrap justify-center gap-10">
-              <li className="font-semibold tracking-tight text-slate-800">
-                <Link href="/">Home</Link>
-              </li>
-              <li className="font-semibold tracking-tight text-slate-800">
-                <Link href="/about">Sobre o projeto</Link>
-              </li>
-              <li className="font-semibold tracking-tight text-slate-800">
-                <Link href="/contact">Noticias</Link>
-              </li>
-            </ul>
-          </nav>
-          {/* <div className="px-4">
-            <div className="grid max-w-lg grid-cols-1 justify-items-center gap-8">
-              <Link href="/" tabIndex={-1}>
-                <div className="relative h-40 w-40 overflow-hidden rounded-full bg-slate-300">
-                  <img
-                    src="/logo.png"
-                    alt="A photo of Margaret Smith (fictional)."
-                    className="object-cover"
-                  />
-                </div>
-              </Link>
-              <div className="grid grid-cols-1 gap-2 text-center">
-                <h1 className="text-3xl font-semibold tracking-tighter text-slate-800 md:text-4xl">
-                  <Link href="/">Meninas Digiais</Link>
-                </h1>
-                <p className="font-serif text-2xl italic leading-normal tracking-tight text-slate-500">
-                  📚 Projeto de Extensão Universitária do Campus Machado -
-                  IFSULDEMINAS Conheça nosso projeto ⤵️
-                </p>
-              </div>
-            </div>
-          </div> */}
-        </div>
-      </div>
+    <header className={cn('fixed top-10 inset-x-0 max-w-2xl mx-auto z-50')}>
+      <Menu setActive={setActive}>
+        <MenuItem setActive={setActive} active={active} item="Services">
+          <div className="flex flex-col space-y-4 text-sm">
+            <HoveredLink href="/web-dev">Web Development</HoveredLink>
+            <HoveredLink href="/interface-design">Interface Design</HoveredLink>
+            <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
+            <HoveredLink href="/branding">Branding</HoveredLink>
+          </div>
+        </MenuItem>
+        <MenuItem setActive={setActive} active={active} item="Products">
+          <div className="  text-sm grid grid-cols-2 gap-10 p-4">
+            <ProductItem
+              title="Algochurn"
+              href="https://algochurn.com"
+              src="https://assets.aceternity.com/demos/algochurn.webp"
+              description="Prepare for tech interviews like never before."
+            />
+            <ProductItem
+              title="Tailwind Master Kit"
+              href="https://tailwindmasterkit.com"
+              src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
+              description="Production ready Tailwind css components for your next project"
+            />
+            <ProductItem
+              title="Moonbeam"
+              href="https://gomoonbeam.com"
+              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
+              description="Never write from scratch again. Go from idea to blog in minutes."
+            />
+            <ProductItem
+              title="Rogue"
+              href="https://userogue.com"
+              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
+              description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
+            />
+          </div>
+        </MenuItem>
+        <MenuItem setActive={setActive} active={active} item="Pricing">
+          <div className="flex flex-col space-y-4 text-sm">
+            <HoveredLink href="/hobby">Hobby</HoveredLink>
+            <HoveredLink href="/individual">Individual</HoveredLink>
+            <HoveredLink href="/team">Team</HoveredLink>
+            <HoveredLink href="/enterprise">Enterprise</HoveredLink>
+          </div>
+        </MenuItem>
+      </Menu>
     </header>
   )
 }

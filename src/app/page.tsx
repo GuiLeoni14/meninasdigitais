@@ -1,6 +1,4 @@
 'use client'
-import Image from 'next/image'
-import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
@@ -12,6 +10,9 @@ import FeaturedPostSlide from '@/components/FeaturedPostSlide'
 import { HeroParallaxDemo } from '@/components/sections/hero'
 import { CTA } from '@/components/sections/cta'
 import { Header } from '@/components/header'
+import { FeaturedCards } from '@/components/sections/featured-cards'
+import FullScreenImageWithText from '@/components/sections/ImageWithParagraph'
+import { History } from '@/components/sections/history'
 
 export default function Home() {
   const { data: posts } = usePosts({})
@@ -20,41 +21,46 @@ export default function Home() {
     <div className="text-slate-700">
       <Header />
       <HeroParallaxDemo />
-      <div className="container mx-auto">
-        <ul className="grid grid-cols-3 gap-5">
-          {posts?.map((post) => (
-            <PostCard post={post} layout="column" key={post.id} />
-          ))}
-        </ul>
-      </div>
+      <FeaturedCards />
+      <History />
+      <FullScreenImageWithText
+        imageSrc="/meninasdigitais.png"
+        imageAlt="Imagem de exemplo?"
+        title="Quem somos"
+        paragraph="Este componente agora é totalmente responsivo. Em dispositivos móveis, a imagem aparece acima do texto, ocupando parte da tela. Em desktops, a imagem fica ao lado do texto, criando um layout lado a lado. O texto sempre respeita o container do Tailwind CSS, garantindo uma leitura confortável em qualquer dispositivo."
+        invertLayout={false}
+      />
+      <FullScreenImageWithText
+        imageSrc="/meninasdigitais.png"
+        imageAlt="Imagem de exemplo"
+        title="Oque fazemos?"
+        paragraph="Este componente agora é totalmente responsivo. Em dispositivos móveis, a imagem aparece acima do texto, ocupando parte da tela. Em desktops, a imagem fica ao lado do texto, criando um layout lado a lado. O texto sempre respeita o container do Tailwind CSS, garantindo uma leitura confortável em qualquer dispositivo."
+        invertLayout={true}
+      />
+      <FullScreenImageWithText
+        imageSrc="/meninasdigitais.png"
+        imageAlt="Onde estamos?"
+        title="Onde estamos?"
+        paragraph="Este componente agora é totalmente responsivo. Em dispositivos móveis, a imagem aparece acima do texto, ocupando parte da tela. Em desktops, a imagem fica ao lado do texto, criando um layout lado a lado. O texto sempre respeita o container do Tailwind CSS, garantindo uma leitura confortável em qualquer dispositivo."
+        invertLayout={false}
+      />
       <CTA
         title="Révolutionnez la formation avec l’apprentissage Learning By Doing"
         description="Tem o intuito de promover a área de Tecnologia da Informação, Computação e correlatos, estimulando e provocando o interesse de mulheres para com a área, assim ocasionando o ingresso e a integração de cada vez mais mulheres e meninas no âmbito."
         buttonText="Entrar em contato"
         buttonLink=""
       />
+      <div className="container mx-auto py-20">
+        <h2 className="text-4xl font-semibold text-center">
+          Conheça o nosso blog
+        </h2>
+        <ul className="grid grid-cols-3 gap-5 mt-10">
+          {posts?.map((post) => (
+            <PostCard post={post} layout="column" key={post.id} />
+          ))}
+        </ul>
+      </div>
 
-      <main>
-        <div className="px-4 py-8 md:px-6 md:py-10 lg:py-12">
-          <div className="mx-auto w-full max-w-6xl">
-            <FeaturedPostSlide />
-            <ul className="grid grid-cols-1 gap-5">
-              {posts?.map((post) => (
-                <PostCard post={post} layout="row" key={post.id} />
-              ))}
-            </ul>
-          </div>
-        </div>
-        <div className="px-4 py-8 md:px-6 md:py-10 lg:py-12">
-          <div className="mx-auto w-full max-w-6xl">
-            <ul className="grid grid-cols-3 gap-5">
-              {posts?.map((post) => (
-                <PostCard post={post} layout="column" key={post.id} />
-              ))}
-            </ul>
-          </div>
-        </div>
-      </main>
       <footer className="p-5">
         <div className="mx-auto w-full max-w-3xl">
           <div className="grid grid-cols-1 justify-items-center gap-5">
