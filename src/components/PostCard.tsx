@@ -1,6 +1,5 @@
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
-import Link from 'next/link'
 
 interface PostCardProps {
   post: {
@@ -16,12 +15,11 @@ interface PostCardProps {
 export function PostCard({ post, layout = 'row' }: PostCardProps) {
   return (
     <div className={cn('flex gap-5', layout === 'column' && 'flex-col')}>
-      <Link
+      <div
         className={cn(
           'w-full',
           layout === 'column' ? 'max-w-full' : 'max-w-[400px]',
         )}
-        href={`/articles/${post.id}`}
         tabIndex={-1}
       >
         <div className="w-full overflow-hidden rounded-sm">
@@ -33,7 +31,7 @@ export function PostCard({ post, layout = 'row' }: PostCardProps) {
             className="object-cover w-full h-auto"
           />
         </div>
-      </Link>
+      </div>
       <div className="flex flex-col flex-1 gap-2">
         <h2
           className={cn(
@@ -42,7 +40,7 @@ export function PostCard({ post, layout = 'row' }: PostCardProps) {
             layout === 'column' && 'text-2xl',
           )}
         >
-          <Link href={`/articles/${post.id}`}>{post.title}</Link>
+          <span>{post.title}</span>
         </h2>
         <p className="font-serif text-base italic tracking-tighter text-slate-500">
           {post.date}
