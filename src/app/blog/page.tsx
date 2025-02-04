@@ -103,12 +103,14 @@ export default function Blog() {
         </section>
 
         {/* Loader para o IntersectionObserver */}
-        <div
-          ref={loaderRef}
-          className={cn('h-2 w-full', {
-            'hidden h-0 w-0': isLoadingMore,
-          })}
-        ></div>
+        {data?.total_pages > data?.page && (
+          <div
+            ref={loaderRef}
+            className={cn('h-2 w-full', {
+              'hidden h-0 w-0': isLoadingMore,
+            })}
+          ></div>
+        )}
       </div>
     </main>
   )
