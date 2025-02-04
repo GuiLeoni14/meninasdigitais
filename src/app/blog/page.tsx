@@ -1,9 +1,8 @@
 'use client'
-import { useState, useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { PostCard } from '@/components/PostCard'
 import { usePosts } from '@/hooks/fetch/usePosts'
 import { cn } from '@/lib/utils'
-import Image from 'next/image'
 
 export default function Blog() {
   const [pageSize, setPageSize] = useState(4)
@@ -56,21 +55,18 @@ export default function Blog() {
 
   return (
     <main className="bg-gray-100 min-h-screen">
-      <section>
-        <div className="container mx-auto grid grid-cols-2 gap-4">
-          <div className="flex flex-col">
-            <h1 className="text-5xl font-semibold">Blog: Meninas digitias</h1>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius
-              porro nemo soluta at eaque placeat animi praesentium fugiat quidem
-              ratione dolore vitae suscipit odio molestias, a laboriosam tenetur
-              voluptates ipsum!
-            </p>
-          </div>
-          <img src="/meninasdigitais.png" />
+      <div className="bg-gradient-to-r from-purple-600 to-pink-600">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24 text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 sm:mb-6 leading-tight">
+            Bem-vindo ao nosso Blog
+          </h1>
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-purple-100 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed">
+            Explorando ideias, compartilhando conhecimento e inspirando mentes
+            curiosas.
+          </p>
         </div>
-      </section>
-      <div className="container mx-auto px-4 py-8">
+      </div>
+      <div className="container mx-auto px-4 py-20">
         {newPost && (
           <section className="mb-12">
             <h2 className="text-3xl font-bold mb-4">{newPost.title}</h2>
@@ -81,9 +77,9 @@ export default function Blog() {
               className="w-full h-64 object-cover rounded-md mb-4"
             />
             <div className="text-gray-800">{newPost.content}</div>
-            <p className="text-gray-500 mt-4">
-              Publicado em: {new Date(newPost.date).toLocaleDateString()}
-            </p>
+            {newPost.date && (
+              <p className="text-gray-500 mt-4">{newPost.date}</p>
+            )}
           </section>
         )}
 

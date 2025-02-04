@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google'
 import './globals.css'
 import { RootProviders } from './providers'
 import { Header } from '@/components/header'
+import { Footer } from '@/components/footer'
 
 // Importando Poppins do Google Fonts
 const poppins = Poppins({
@@ -26,6 +27,7 @@ export default function RootLayout({
         <body className={`${poppins.className} antialiased`}>
           <Header />
           {children}
+          <Footer />
         </body>
       </html>
     </RootProviders>

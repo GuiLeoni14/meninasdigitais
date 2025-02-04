@@ -23,8 +23,10 @@ export default async function BlogPost({
   const post = await getPostBySlug(params.slug)
 
   return (
-    <article className="max-w-3xl mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
+    <article className="container mx-auto px-4 py-8">
+      <h1 className="text-2xl lg:text-4xl font-bold mb-4 text-center">
+        {post.title}
+      </h1>
 
       <Image
         src={post.thumbnail || '/placeholder.svg'}
@@ -35,7 +37,7 @@ export default async function BlogPost({
       />
 
       <div
-        className="prose max-w-none"
+        className="prose prose-sm max-w-none"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
     </article>

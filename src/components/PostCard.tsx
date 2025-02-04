@@ -36,8 +36,8 @@ export function PostCard({ post, layout = 'row' }: PostCardProps) {
         <h2
           className={cn(
             'font-semibold tracking-tighter text-slate-800',
-            layout === 'row' && 'text-3xl md:text-4xl',
-            layout === 'column' && 'text-2xl',
+            layout === 'row' && 'text-xl md:text-4xl',
+            layout === 'column' && 'text-xl lg:text-2xl',
           )}
         >
           <span>{post.title}</span>
@@ -48,7 +48,7 @@ export function PostCard({ post, layout = 'row' }: PostCardProps) {
         <p
           className={cn(
             'leading-relaxed md:leading-relaxed',
-            layout === 'row' && 'md:text-lg',
+            layout === 'row' && 'text-sm md:text-lg',
             layout === 'column' && 'text-sm',
           )}
         >

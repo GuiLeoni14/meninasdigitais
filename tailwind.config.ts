@@ -12,6 +12,9 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-poppins)', 'sans-serif'],
       },
+      container: {
+        padding: '20px',
+      },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
