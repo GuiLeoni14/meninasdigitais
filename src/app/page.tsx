@@ -18,24 +18,26 @@ export default function Home() {
       <FeaturedCards />
       <History />
       <FullScreenImageWithText
-        imageSrc="/meninasdigitais.png"
-        imageAlt="Imagem de exemplo?"
+        imageSrc="/images/projeto.png"
+        imageAlt="Grupo Meninas Digitais em ação"
         title="Quem somos"
-        paragraph="Este componente agora é totalmente responsivo. Em dispositivos móveis, a imagem aparece acima do texto, ocupando parte da tela. Em desktops, a imagem fica ao lado do texto, criando um layout lado a lado. O texto sempre respeita o container do Tailwind CSS, garantindo uma leitura confortável em qualquer dispositivo."
+        paragraph="Somos o GAPE, um grupo dedicado à inclusão de mulheres na tecnologia. Nosso objetivo é incentivar meninas e mulheres a ingressarem na área de Tecnologia da Informação e Computação, promovendo eventos, oficinas e ações educacionais."
         invertLayout={false}
       />
+
       <FullScreenImageWithText
-        imageSrc="/meninasdigitais.png"
-        imageAlt="Imagem de exemplo"
-        title="Oque fazemos?"
-        paragraph="Este componente agora é totalmente responsivo. Em dispositivos móveis, a imagem aparece acima do texto, ocupando parte da tela. Em desktops, a imagem fica ao lado do texto, criando um layout lado a lado. O texto sempre respeita o container do Tailwind CSS, garantindo uma leitura confortável em qualquer dispositivo."
+        imageSrc="/images/mesa_redonda.png"
+        imageAlt="Oficina de programação do GAPE"
+        title="O que fazemos?"
+        paragraph="Realizamos encontros semanais, participamos de eventos de TI, oferecemos minicursos e promovemos debates com profissionais da área. Além disso, publicamos pesquisas e relatos de experiência para fortalecer a presença feminina na tecnologia."
         invertLayout={true}
       />
+
       <FullScreenImageWithText
         imageSrc="/meninasdigitais.png"
-        imageAlt="Onde estamos?"
+        imageAlt="Campus do IFSULDEMINAS"
         title="Onde estamos?"
-        paragraph="Este componente agora é totalmente responsivo. Em dispositivos móveis, a imagem aparece acima do texto, ocupando parte da tela. Em desktops, a imagem fica ao lado do texto, criando um layout lado a lado. O texto sempre respeita o container do Tailwind CSS, garantindo uma leitura confortável em qualquer dispositivo."
+        paragraph="Estamos localizados no IFSULDEMINAS e atuamos tanto presencialmente quanto remotamente. Organizamos eventos e atividades para discentes, professoras e profissionais de diferentes níveis de ensino."
         invertLayout={false}
       />
       <div className="py-20">
