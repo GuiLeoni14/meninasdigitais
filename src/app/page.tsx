@@ -16,7 +16,6 @@ export default function Home() {
     <div className="text-slate-700">
       <HeroParallaxDemo />
       <FeaturedCards />
-      <History />
       <FullScreenImageWithText
         imageSrc="/images/projeto.png"
         imageAlt="Grupo Meninas Digitais em ação"
